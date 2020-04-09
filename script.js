@@ -1,11 +1,23 @@
-let progress = 0
+function init() {
+	
+	let progress = 0
 
-$("button").click(function() {
-    let button_value = $(this).val();
+	$("button").click(function() {
+	    let button_value = $(this).val();
 
-    progress = +progress + +button_value
+	    if (progress <= 99) {
+	    	progress = +progress + +button_value
+	    }
 
-    $(".progress-bar").width(progress + "%")
-    $(".progress-bar").text(progress + "%")
+	    else {
+	    	progress = 0
+	    }
 
-});
+	    $(".progress-bar").width(progress + "%")
+		$(".progress-bar").text(progress + "%")
+
+	});
+  
+}
+
+$(document).ready(init);
